@@ -33,3 +33,9 @@
 .photo-author a {
 	font-weight: bold;
 }
+
+@media screen and (max-width: 600px) {
+	.pic-item {
+		width: 100%;
+	}
+}

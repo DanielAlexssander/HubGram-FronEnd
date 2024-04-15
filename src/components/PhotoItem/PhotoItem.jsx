@@ -14,7 +14,7 @@ const PhotoItem = ({ photo, view = false }) => {
 
 	useEffect(() => {
 		dispatch(getUserDetails(photo.userId));
-	}, [dispatch, photo.userId]);
+	}, [dispatch, photo]);
 
 	const { user } = useSelector((state) => state.user);
 
@@ -23,14 +23,14 @@ const PhotoItem = ({ photo, view = false }) => {
 			{user && (
 				<div>
 					<Link className="profile-header-photo" to={`/users/${photo.userId}`}>
-						{user.profileImage && (
+						{photo.profileImage && (
 							<img
 								className="profile-pic-post"
-								src={`${uploads}/users/${user.profileImage}`}
-								alt={user.name}
+								src={`${uploads}/users/${photo.profileImage}`}
+								alt={photo.userName}
 							/>
 						)}
-						<h2>{user.name}</h2>
+						<h2>{photo.userName}</h2>
 					</Link>
 				</div>
 			)}

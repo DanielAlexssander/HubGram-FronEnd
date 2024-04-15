@@ -42,6 +42,7 @@ const Home = () => {
 			{photos &&
 				photos.map((photo) => (
 					<div className="photo-home" key={photo._id}>
+						{console.log(photo)}
 						<PhotoItem photo={photo} view={true} />
 						<LikeContainer photo={photo} user={user} handleLike={handleLike} />
 					</div>
